@@ -1,8 +1,9 @@
 <h1>Your team is.....</h1>
 <h2 id="team"></h2>
 <script>
+  import random
 document.addEventListener("DOMContentLoaded", function() {
- import random
+
  var team = document.getElementById("team");
  team.textContent = random.choice(['red','blue'])
 });
