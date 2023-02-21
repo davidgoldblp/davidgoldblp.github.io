@@ -1,13 +1,17 @@
-<center><h1>Your team is.....</h1>
- <h2 id="team"></h2></center>
-<script>
- function choose(choices) {
-  var index = Math.floor(Math.random() * choices.length);
-  return choices[index];
- }
-document.addEventListener("DOMContentLoaded", function() {
+<html>
+<head>
+    <title>BLP CODENAMES TEAM PICKER</title>
+</head>
+<body>
+<div id="spinner-container">
+  <canvas id="spinner-canvas" width="300" height="300"></canvas>
+<div id="arrow">^</div>
+  <button id="spin-button">Spin!</button>
+</div>
 
- var team = document.getElementById("team");
- team.textContent = choose(['red','blue'])
-});
-</script>
+
+
+<script type="text/javascript" src="site.js"></script>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</body>
+</html>
