@@ -1,20 +1,55 @@
-#spinner-container {
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+area {
+/*  outline: 5px solid red;*/
+}
+
+.popup {
+  padding: 20px;
+  background-color: rgba(100, 100, 100, 0.9);
+  color: white;
+  font-weight: 100;
+  font-size: 14px;
+  position: absolute;
+  
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.popup > .close {
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  background-color: black;
+  padding: 4px 10px;
+}
+
+.popup:target {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.parent {
   position: relative;
-  width: 300px;
-  height: 300px;
-  margin: 0 auto;
+  top: 0;
+  left: 0;
 }
 
-#spin-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.image1 {
+  position: relative;
+  top: 0;
+  left: 0;
+  /*border: 1px red solid;*/
 }
 
-#arrow {
+.image2 {
   position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 50px;
+  left: 150px;
+  /*border: 1px green solid;*/
 }
