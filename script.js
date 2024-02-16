@@ -1,28 +1,29 @@
-const team = document.querySelector('#team');
-const message = document.querySelector('#message');
+const button = document.getElementById('pick-button');
+const result = document.getElementById('result');
 
-const chooseButton = document.querySelector('#choose-button');
+button.addEventListener('click', () => {
+  const colors = ['blue', 'blue'];
+  const randomIndex = Math.floor(Math.random() * colors.length);
+  const chosenColor = colors[randomIndex];
 
-const faces = ['\u{1F499}', '\u{1F4D8}', '\u{1F535}', '\u{1F537}', '\u{1F30A}', '\u{1F534}'];
+  result.textContent = `You picked ${chosenColor}`;
+  result.style.color = chosenColor;
+  playSound('https://ia903104.us.archive.org/34/items/Coldplay_201807/Yellow.mp3');
+  var body = document.getElementsByTagName('body');
+  document.body.classList.add('it-was-all-yellow');
 
-chooseButton.addEventListener('click', () => {
-message.textContent = "";
-  const randomFace = faces[Math.floor(Math.random() * faces.length)];
-  team.style.transform = `rotateX(${Math.random() * 360}deg) rotateY(${Math.random() * 360}deg)`;
-  setTimeout(() => {
-    team.style.transform = 'none';
-    team.textContent =  randomFace;
-    if(randomFace == '\u{1F534}') {
-        message.textContent = "Your team is RRRRRRRRRR";
-        setTimeout(() => {
-            team.textContent =  faces[1];
-            message.textContent = "Your team is RRRRRRRRRROYAL BLUE";
-          }, 1200);
-    }
-    else {
-    message.textContent = "Your team is BLUE";
-    }
-
-  }, 800);
+  setTimeout(function () {
+		const container = document.getElementById('container');
+		container.style.display = 'none';
+		const myImage = new Image(480, 208);
+		myImage.src = "https://pa1.aminoapps.com/7805/11426e762c47482c08c924edd389503c0e520607r1-480-208_hq.gif";
+		document.body.appendChild(myImage);
+    }, 8400);
 });
+
+function playSound(url) {
+    var a = new Audio(url);
+    a.play();
+}
+
 

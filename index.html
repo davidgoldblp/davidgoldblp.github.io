@@ -1,52 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Codenames Team Picker</title>
-<style>
-  #team {
-    width: 200px;
-    height: 200px;
-    background-color: #fff;
-    border: 2px solid black;
-    margin: 50px auto;
-    position: relative;
-    transition: transform 0.8s ease-in-out;
-    font-size:150px;
-  }
-
-  #team::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 80px;
-    font-weight: bold;
-  }
-
-  #choose-button {
-    padding: 10px 20px;
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-        position: relative;
-  }
-  .center{
-  height: 100%;
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codenames Team Picker</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="team"></div>
-  <div class = "center">
-    <button id="choose-button">choose team</button>
- </div>
- <h1 id="message" class="center"></h1>
-  <script src="script.js"></script>
-</body>
+    <div id="container">
+        <h1>Pick a Code Names Team!</h1>
+        <button id="pick-button">Click Me!</button>
+        <p id="result"></p>
+		    <br/>
+    </div>
+	<script src="script.js"></script>
+</body> 
 </html>
