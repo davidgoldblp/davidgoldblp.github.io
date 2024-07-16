@@ -1,47 +1,23 @@
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-}
-
-.roulette {
-  text-align: center;
-}
-body {
   font-family: sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-#container {
-  text-align: center;
+  margin: 0;
   padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
 }
 
-#pick-button {
-  background-color: #ddd;
-  border: none;
+#story {
+  text-align: center;
+}
+
+button {
+  margin: 10px;
   padding: 10px 20px;
-  font-size: 16px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
 }
 
-#result {
-  font-size: 20px;
-  margin-top: 10px;
-}
+#story.blue {
+  background-color: blue;
+  color:white;
 
-.it-was-all-yellow {
-  transition: background-color 25s;
-  background-color: yellow;
-
-  @starting-style {
-    background-color: red;
-  }
 }
