@@ -1,22 +1,43 @@
-const buttons = document.querySelectorAll('button');
-const storyText = document.getElementById('story');
-const body = document.getElementById('body');
+const ball = document.querySelector('.ball');
+const launchButton = document.querySelector('.launch-button');
 
+launchButton.addEventListener('click', () => {
+  // Randomize the ball's trajectory
+  let angle = Math.random() * 2 * Math.PI;
+  let speed = 5; // Adjust the speed as needed
 
+  // Simulate the ball's movement using setInterval
+  let x = ball.offsetLeft;
+  let y = ball.offsetTop;
+  const intervalId = setInterval(() => {
+    x += speed * Math.cos(angle);
+    y -= speed * Math.sin(angle);
+    ball.style.left = x + 'px';
+    ball.style.top = y + 'px';
 
-buttons.forEach(button => {
-  button.addEventListener('click', () => {
+    // Check if the ball has hit a target
+    const redTargetRect = document.querySelector('.red-target').getBoundingClientRect();
+    const blueTargetRect = document.querySelector('.blue-target').getBoundingClientRect();
+    if (x > redTargetRect.left && x < redTargetRect.right && y > redTargetRect.top && y < redTargetRect.bottom) {
+      clearInterval(intervalId);
+	  let elem = document.getElementById("red");
+	  elem.classList.toggle('red-target');
+	  //elem.classList.add('target');
+      elem.style.backgroundColor = 'blue';
+	  alert('Blue Team!');
+	  
 
-
-    if (button.id === 'button1') {
-      storyText.textContent = "You wander deeper into the forest. The air grows colder, and the greyness thickens. Suddenly, a giant blue butterfly lands on your shoulder. Team Blue.";
-    } else if(button.id ==="button2") {
-      storyText.textContent = "You follow the faint blue light, which leads you to a shimmering blue lake. A lone blue flower grows on the bank. Team Blue.";
+	  
+	  
+    } else if (x > blueTargetRect.left && x < blueTargetRect.right && y > blueTargetRect.top && y < blueTargetRect.bottom) {
+      clearInterval(intervalId);
+      alert('Blue Team!');
     }
-    body.style.backgroundColor='blue';
-    body.style.color='white';
-
-    buttons[0].style.display='none';
-    buttons[1].style.display='none';
-  });
+	if(x < 0 || x > 380 || y < 0 || y > 380)
+	{
+		speed = speed * -1
+		angle = angle + Math.random() * 10
+	}
+	
+  }, 10);
 });

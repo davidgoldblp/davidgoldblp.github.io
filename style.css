@@ -1,23 +1,35 @@
-body {
-  font-family: sans-serif;
-  margin: 0;
-  padding: 20px;
+.game-board {
+  width: 400px;
+  height: 400px;
+  border: 1px solid black;
+  position: relative;
 }
 
-#story {
-  text-align: center;
+.target {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
 }
 
-button {
-  margin: 10px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.red-target {
+  background-color: red;
+  top: 50px;
+  left: 50px;
 }
 
-#story.blue {
+.blue-target {
   background-color: blue;
-  color:white;
+  top: 250px;
+  left: 250px;
+}
 
+.ball {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: black;
+  top: 200px;
+  left: 200px;
 }
